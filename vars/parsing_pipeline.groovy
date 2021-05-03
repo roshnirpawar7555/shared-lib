@@ -21,9 +21,9 @@ pipeline
         def fruit = inputjson.fruit;
 	  //print fruit
 		
-	sh '''
+	sh """
 	echo $fruit
-	'''
+	"""
 	}
       }
     }
