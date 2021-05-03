@@ -1,3 +1,4 @@
+import groovy.json.JsonSlurperClassic
 def call(body) 
 {	
     def config = [:]
@@ -10,9 +11,18 @@ pipeline
    stages
   {
    stage('Build')
+   {
+    steps
+      {
+       script
+        {
     def json = libraryResource "${config.token_file}"
         def inputjson = new JsonSlurperClassic().parseText(json)
-        def serviceAccount = inputjson.account;
+        def fruit = inputjson.fruit;
+	  print fruit
+	}
+      }
+    }
   }
 
 }
