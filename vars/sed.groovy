@@ -16,7 +16,7 @@ pipeline
        script
         {
 sh """
-sed 's/roshni/ruhi/g' token
+sed -i's/roshni/ruhi/g' token
 cat token
 """
         }
