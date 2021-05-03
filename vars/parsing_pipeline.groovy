@@ -18,9 +18,7 @@ pipeline
         {
     def json = libraryResource "${config.token_file}"
         def inputjson = new JsonSlurperClassic().parseText(json)
-        def question = inputjson.fruit;
-        def fruit = inputjson.quiz.sport.q1.question;
-          print question
+        def fruit = inputjson.fruit;
 	  print fruit
 	}
       }
