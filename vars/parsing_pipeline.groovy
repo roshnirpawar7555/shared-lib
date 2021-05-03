@@ -19,7 +19,11 @@ pipeline
 		def json = libraryResource "config_${envname}.json"
         def inputjson = new JsonSlurperClassic().parseText(json)
         def fruit = inputjson.fruit;
-	  print fruit
+	  //print fruit
+		
+	sh '''
+	echo $fruit
+	'''
 	}
       }
     }
