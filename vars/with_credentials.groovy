@@ -15,9 +15,9 @@ pipeline
       {
        script
         {
-withCredentials([usernamePassword(credentialsId: 'my_password', passwordVariable: 'pass', usernameVariable: 'user')]) {
+withCredentials([string(credentialsId: 'my_secret', variable: 'Secret')]) {
     sh """
-sed -i 's/#token-password/$pass/g' token
+sed -i 's/#token-password/$Secret/g' token
 cat token
 """
 }
