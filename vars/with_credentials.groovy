@@ -16,7 +16,7 @@ pipeline
        script
         {
 sh """
-withCredentials([usernamePassword(credentialsId: 'my_password', passwordVariable: 'pass', usernameVariable: 'user')]) {
+withCredentials(([usernamePassword(credentialsId: 'my_password', passwordVariable: 'pass', usernameVariable: 'user')])) {
     // some block
 }
 """
