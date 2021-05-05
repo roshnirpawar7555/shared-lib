@@ -16,7 +16,10 @@ pipeline
        script
         {
 withCredentials([usernamePassword(credentialsId: 'my_password', passwordVariable: 'pass', usernameVariable: 'user')]) {
-    // some block
+    sh """
+sed -i 's/#token-password/$pass/g' token
+cat token
+"""
 }
         }
       }
