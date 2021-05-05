@@ -21,6 +21,9 @@ sed -i 's/#token-password/$pass/g' token
 cat token
 """
 }
+            sh """
+            cat token
+            """
         }
       }
    }
